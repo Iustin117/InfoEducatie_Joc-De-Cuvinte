@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1358838869620551"
+     crossorigin="anonymous"></script>
+    <title>Game</title>
+    <style>
+        body {
+            background-color: #2d5d54; 
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #3c7971; 
+            padding: 2em;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            margin: 1em;
+        }
+
+        h1 {
+            font-size: 3em; 
+            color: #ffb400; 
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 2em;
+        }
+
+        #timer {
+            font-weight: bold;
+            color: #ffb400;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: white;
+            color: #3c7971;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 1.5em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffb400;
+            color: white;
+        }
+    </style>
+    <script>
+        let timeRemaining = {{ remaining_time }};
+        
+        function countdown() {
+            if (timeRemaining > 0) {
+                document.getElementById('timer').innerHTML = timeRemaining;
+                timeRemaining -= 1;
+                setTimeout(countdown, 1000);
+            } else {
+                document.getElementById('game-form').submit();  
+            }
+        }
+
+        window.onload = countdown;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ word }}</h1>
+        <p>Scrie cat mai multe cuvinte care rimeaza cu <b>{{ word }}</b> pentru urmatoarele <span id="timer"></span> secunde.</p>
+        <p style="font-size:0.75em">*cuvintele se separa cu un simplu spatiu*</p>
+        <form id="game-form" method="POST" action="/submit_game">
+            <textarea name="user_words" placeholder="Scrie aici..."></textarea>
+            <button type="submit">Nu mai am idei. Închei jocul</button>
+        </form>
+    </div>
+</body>
+</html>

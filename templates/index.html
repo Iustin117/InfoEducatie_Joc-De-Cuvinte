@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1358838869620551"
+     crossorigin="anonymous"></script>
+    <title>Rima - Menu</title>
+    <style>
+        body {
+            background-color: #2d5d54; 
+            color: #fff; 
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 1rem; 
+        }
+
+        
+        .container {
+            background-color: #3c7971; 
+            padding: 2em;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            margin: 1em;
+        }
+
+        h1 {
+            color: #ffb400; 
+            margin-bottom: 2.5em; 
+            font-size: 2.5em; 
+            letter-spacing: 0.3125em; 
+        }
+
+        .menu-btn {
+            background-color: white;
+            color: #3c7971;
+            border: none;
+            padding: 1em; 
+            font-size: 1.125em; 
+            width: 100%;
+            border-radius: 0.625em; 
+            margin-bottom: 1.25em; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .start-game{
+            background-color: white;
+            color: #3c7971;
+            border: none;
+            padding: 1.2em; 
+            font-size: 1.25em; 
+            width: 100%;
+            border-radius: 0.625em; 
+            margin-bottom: 1.25em; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .start-game:hover {
+            background-color: #ffb400; 
+            color: white;
+        }
+
+        .menu-btn:hover {
+            background-color: #ffb400; 
+            color: white;
+        }
+
+        .logout-btn {
+            background-color: #2d5d54; 
+            color: white;
+            border: 0.125em solid white; 
+            padding: 1em; 
+            font-size: 1.125em; 
+            width: 100%;
+            border-radius: 0.625em; 
+            cursor: pointer;
+            margin-top: 1.25em; 
+        }
+
+        .logout-btn:hover {
+            background-color: #ffb400; 
+            border-color: #ffb400;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RIMA</h1>
+        <button class="start-game" onclick="window.location.href='/game'">Începe jocul</button>
+        <button class="menu-btn" onclick="window.location.href='/profile'">Scorurile mele</button>
+        <button class="menu-btn" onclick="window.location.href='/highscores'">Clasament</button>
+        <button class="logout-btn" onclick="window.location.href='/logout'">Deconectează-mă</button>
+    </div>
+</body>
+</html>

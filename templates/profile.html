@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1358838869620551"
+     crossorigin="anonymous"></script>
+    <title>Profilul meu</title>
+    <style>
+        body {
+            background-color: #2d5d54;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            padding: 2em;
+            margin:1em;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1em;
+        }
+
+        .back-btn {
+            background-color: #3c7971; 
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            position: absolute; 
+            top: 3%; 
+            left: 6%;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffb400;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 2em;
+        }
+
+        .card {
+            background-color: #3c7971;
+            padding: 1em;
+            border-radius: 15px;
+            margin-bottom: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card p {
+            margin: 0.5em 0;
+        }
+
+        .logout-btn {
+            background-color: #2d5d54;
+            border: 2px solid white;
+            color: white;
+            padding: 1em;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 2em;
+            transition: background-color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: #ffb400;
+            border-color: #ffb400;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button  class="back-btn" onclick="window.location.href='/'">&lt;</button>
+        <div class="header">
+            <h1>{{ user_name }}</h1>
+        </div>
+        <h2>SCOR MAXIM: {{ best_score }}</h2>
+
+        
+        {% for game in last_games %}
+        <div class="card">
+            <p><strong>SCOR:</strong> {{ game[0] }}</p>
+            <p><strong>Lista de cuvinte:</strong> {{ game[1] }}</p>
+            <p><strong>Data:</strong> {{ game[2].split()[0] }}</p>
+        </div>
+        {% endfor %}
+        <div class="container">
+            <button class="logout-btn" onclick="window.location.href='/game'">Joc nou</button>
+
+        </div>
+
+    </div>
+</body>
+</html>

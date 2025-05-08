@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1358838869620551"
+     crossorigin="anonymous"></script>
+    <title>Register</title>
+    <style>
+        
+        body {
+            background-color: #2d5d54; 
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        
+        .container {
+            background-color: #3c7971; 
+            padding: 2em;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            margin: 1em;
+        }
+
+
+        
+        h1 {
+            color: #ffb400;
+            margin-bottom: 20px;
+            font-size: 40px;
+            letter-spacing: 3px;
+        }
+
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        
+        button {
+            background-color: white;
+            color: #3c7971;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        
+        button:hover {
+            background-color: #ffb400; 
+            color: white;
+        }
+
+        
+        .flashes {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .flashes li {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        a {
+            color: #ffb400;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form method="POST" action="/register">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            <p>Acceptand <a href="/ToS-ro">ToS</a> si <a href="/privacy-policy-ro">Privacy-Policy</a> creeati acest cont. </p>
+            <button type="submit">Register</button>
+            <a href="/login">or Conecteaza-te</a>
+        </form>
+        <!--
+            <div  class="container">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1358838869620551"
+                crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-1358838869620551"
+                    data-ad-slot="5257132549"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true">
+                </ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        -->
+    </div>
+</body>
+</html>
